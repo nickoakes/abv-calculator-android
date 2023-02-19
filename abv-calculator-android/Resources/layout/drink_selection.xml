@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="What have you made?"
+        android:textSize="30sp"
+        android:textFontWeight="800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/drink_selection_title" />
+
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/drink_selection_radio_group">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:checked="true"
+            android:text="Beer"
+            android:id="@+id/drink_selection_beer" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="Wine"
+            android:id="@+id/drink_selection_wine" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="Cider"
+            android:id="@+id/drink_selection_cider" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="Mead"
+            android:id="@+id/drink_selection_mead" />
+    </RadioGroup>
+
+        <Button
+            android:text="Continue"
+            android:layout_width="181.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drink_selection_continue"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"/>
+
+</RelativeLayout>

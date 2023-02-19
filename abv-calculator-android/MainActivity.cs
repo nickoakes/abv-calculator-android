@@ -3,27 +3,73 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using AndroidX.AppCompat.Widget;
 using AndroidX.AppCompat.App;
-using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
+using Android.Widget;
 
 namespace abv_calculator_android
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private string _selectedDrinkOption = "beer";
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.content_main);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+            //Start
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            Button startButton = FindViewById<Button>(Resource.Id.start_button);
+            startButton.Click += StartButton_Click;
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.drink_selection);
+
+            //Drink selection
+
+            RadioButton beerOption = FindViewById<RadioButton>(Resource.Id.drink_selection_beer),
+                        wineOption = FindViewById<RadioButton>(Resource.Id.drink_selection_wine),
+                        ciderOption = FindViewById<RadioButton>(Resource.Id.drink_selection_cider),
+                        meadOption = FindViewById<RadioButton>(Resource.Id.drink_selection_mead);
+
+            beerOption.Click += BeerOption_Click;
+            wineOption.Click += WineOption_Click;
+            ciderOption.Click += CiderOption_Click;
+            meadOption.Click += MeadOption_Click;
+
+            Button drinkSelectionContinue = FindViewById<Button>(Resource.Id.drink_selection_continue);
+            drinkSelectionContinue.Click += DrinkSelectionContinue_Click;
+        }
+
+        private void DrinkSelectionContinue_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.default_sugar);
+            FindViewById<TextView>(Resource.Id.default_sugar_title).Text = $"Would you like to use the default amount of sugar for {_selectedDrinkOption}?";
+        }
+
+        private void MeadOption_Click(object sender, EventArgs e)
+        {
+            _selectedDrinkOption = "mead";
+        }
+
+        private void CiderOption_Click(object sender, EventArgs e)
+        {
+            _selectedDrinkOption = "cider";
+        }
+
+        private void WineOption_Click(object sender, EventArgs e)
+        {
+            _selectedDrinkOption = "wine";
+        }
+
+        private void BeerOption_Click(object sender, EventArgs e)
+        {
+            _selectedDrinkOption = "beer";
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -41,13 +87,6 @@ namespace abv_calculator_android
             }
 
             return base.OnOptionsItemSelected(item);
-        }
-
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (View.IOnClickListener)null).Show();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

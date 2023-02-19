@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:textSize="30sp"
+        android:textFontWeight="800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:id="@+id/default_sugar_title" />
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/default_sugar_radio_group">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginVertical="10dp"
+            android:text="Yes"
+            android:id="@+id/default_sugar_yes" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="No"
+            android:id="@+id/default_sugar_no" />
+    </RadioGroup>
+    <Button
+            android:text="Continue"
+            android:layout_width="181.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/default_sugar_continue"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"/>
+</RelativeLayout>
