@@ -42,7 +42,7 @@
             android:id="@+id/default_sugar_no" />
     </RadioGroup>
     <Button
-            android:text="Continue"
+            android:text="@string/continue_button"
             android:layout_width="181.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/default_sugar_continue"
