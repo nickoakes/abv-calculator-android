@@ -113,7 +113,6 @@ namespace abv_calculator_android
         {
             bool defaultSugar = GetDefaultSugar();
             _selectedDrink.DefaultSugar = defaultSugar;
-            _selectedDrink.BaseSugarPerLitre = defaultSugar;
 
             if (defaultSugar)
             {
@@ -152,6 +151,8 @@ namespace abv_calculator_android
             {
                 validation.Visibility = Android.Views.ViewStates.Invisible;
 
+                _selectedDrink.BaseSugarPerLitre = false;
+
                 _selectedDrink.SetHoneyBaseSugarMass(double.Parse(honeyMass));
 
                 AdvanceToAdditionalSugar();
@@ -171,6 +172,8 @@ namespace abv_calculator_android
             else
             {
                 validation.Visibility = Android.Views.ViewStates.Invisible;
+
+                _selectedDrink.BaseSugarPerLitre = false;
 
                 _selectedDrink.BaseSugar = double.Parse(baseSugar);
 
