@@ -19,13 +19,20 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:id="@+id/drink_selection_title" />
+    <ImageView
+        android:src="@mipmap/beer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/icon_description"
+        android:id="@+id/imageView1" />
     <Button
-        android:text="Start"
+        android:text="@string/start_button"
         android:layout_width="181.0dp"
         android:layout_height="wrap_content"
         android:id="@+id/start_button"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp" />
-
 </RelativeLayout>
