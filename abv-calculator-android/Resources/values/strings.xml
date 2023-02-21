@@ -15,6 +15,11 @@
 	<!--Units-->
 	<string name="additional_sugar_unit">grams</string>
 	<string name="total_volume_unit">litres</string>
+	<!--Default sugar amounts-->
+	<string name="beer_default_sugar">517.7g per standard 40-pint kit</string>
+	<string name="wine_default_sugar">160g per 1000ml of red grape juice</string>
+	<string name="cider_default_sugar">100g per 1000ml of apple juice</string>
+	<string name="mead_default_sugar">81g per 100g of clear honey</string>
 	<!--Buttons-->
 	<string name="start_button">Start</string>
 	<string name="continue_button">Continue</string>

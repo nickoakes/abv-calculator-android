@@ -105,6 +105,28 @@ namespace abv_calculator_android
             SetContentView(Resource.Layout.default_sugar);
             FindViewById<TextView>(Resource.Id.default_sugar_title).Text = $"Would you like to use the default amount of sugar for {_selectedDrink.Name}?";
 
+            string defaultSugarAmount = "";
+
+            switch (_selectedDrink.Name)
+            {
+                case "beer":
+                    defaultSugarAmount = GetString(Resource.String.beer_default_sugar);
+                    break;
+                case "wine":
+                    defaultSugarAmount = GetString(Resource.String.wine_default_sugar);
+                    break;
+                case "cider":
+                    defaultSugarAmount = GetString(Resource.String.cider_default_sugar);
+                    break;
+                case "mead":
+                    defaultSugarAmount = GetString(Resource.String.mead_default_sugar);
+                    break;
+                default:
+                    break;
+            }
+
+            FindViewById<TextView>(Resource.Id.default_sugar_amount).Text = $"({defaultSugarAmount})";
+
             Button defaultSugarContinue = FindViewById<Button>(Resource.Id.default_sugar_continue);
             defaultSugarContinue.Click += DefaultSugarContinue_Click;
         }

@@ -19,6 +19,13 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:id="@+id/default_sugar_title" />
+    <TextView
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/default_sugar_title"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/default_sugar_amount" />
     <RadioGroup
         android:minWidth="25px"
         android:minHeight="25px"
